@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { useCounterStore } from '@/stores/counter'
 
-const { count, increment } = useCounterStore()
+const counter = useCounterStore()
 </script>
 
 <template>
-	<counter>
-		<button @click="increment">click to count up: {{ count }}</button>
-	</counter>
+	<counterbtn>
+		<button @click="counter.increment">
+			click me to count up {{ counter.count }}
+		</button>
+	</counterbtn>
 </template>
 
 <style scoped></style>
